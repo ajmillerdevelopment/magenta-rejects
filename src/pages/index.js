@@ -1,11 +1,12 @@
 import * as React from "react"
 import logo from '../images/logo.svg'
 import './global.css'
+import './index.css'
 
 // markup
 const IndexPage = () => {
   return (
-    <>
+    <div className="pageRoot">
     <header>
       <img src={logo} alt="Magenta Rejects Logo"/>
       <div className="titlegroup">
@@ -35,7 +36,7 @@ const IndexPage = () => {
         </div>
       </section>
     </main>
-    </>
+    </div>
   )
 }
 
