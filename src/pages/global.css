@@ -3,6 +3,10 @@
     --darkpurple: #990066;
     --pink: #FF7BAC;
 }
+html {
+    height: 100%;
+    background-image: url('../images/cover.png');
+}
 .container {
     background-color: var(--pink);
     opacity: 0.61;

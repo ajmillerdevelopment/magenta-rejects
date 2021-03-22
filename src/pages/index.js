@@ -1,5 +1,5 @@
 import * as React from "react"
-import logo from '../images/MRlogo-01.2984f31b.svg'
+import logo from '../images/logo.svg'
 
 // markup
 const IndexPage = () => {
