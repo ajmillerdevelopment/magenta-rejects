@@ -1,0 +1,14 @@
+:root {
+    --lightpurple: #FF3399;
+    --darkpurple: #990066;
+    --pink: #FF7BAC;
+}
+.container {
+    background-color: var(--pink);
+    opacity: 0.61;
+    border-radius: 20px;
+}
+.logo {
+    height: 100%;
+    width: 100%;
+}
