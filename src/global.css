@@ -1,6 +1,6 @@
 :root {
-    --lightpurple: #FF3399;
-    --darkpurple: #990066;
+    --darkpink: #FF3399;
+    --purple: #990066;
     --pink: #FF7BAC;
 }
 html {
@@ -18,4 +18,11 @@ body {
 .logo {
     height: 100%;
     width: 100%;
+}
+h1, h2, .subhead {
+    font-family: "Shrikhand", Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+h3, h4, p {
+    font-family: "rubik", Arial, Helvetica, sans-serif;
 }

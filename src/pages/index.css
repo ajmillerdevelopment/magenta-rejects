@@ -6,5 +6,71 @@
     grid-template-rows: 1fr 60px 4fr;
 }
 header {
-    grid-area: 1 1 3 2;
+    grid-area: 1/1/2/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1% 3%;
+    align-items: center;
+}
+.logo {
+    max-height: 250px;
+    max-width: 250px;
+}
+h1 {
+    font-size: 60px;
+    text-shadow: 3px 3px #FF0099;
+    margin: 0;
+}
+.subhead {
+    font-size: 42px;
+    margin: 0;
+    text-align: right;
+}
+nav {
+    grid-area: 2/1/3/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 10%;
+}
+nav a {
+    font-family: 'rubik', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--darkpink);
+    text-shadow: 1.5px 1.5px #42045a;
+}
+.shop {
+    grid-area: 3/1/4/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2, h3 {
+    margin: 2%;
+}
+h3 {
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 26px;
+}
+.container {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.storePreview {
+    height: 80%;
+    width: 80%;
+}
+.blog {
+    grid-area: 3/2/4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
