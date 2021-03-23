@@ -20,11 +20,6 @@ exports.createPages = ({actions: {createPage}}) => {
     artists.forEach(artist => {
         createPage({
             path: `/${artist.path}`,
-            component: require.resolve('./src/templates/about.js'),
-            context: {id: artist.id}
-        })
-        createPage({
-            path: `/${artist.path}/blog`,
             component: require.resolve('./src/templates/blog.js'),
             context: {id: artist.id}
         })
