@@ -7,26 +7,26 @@ const IndexPage = () => {
   return (
     <div className="pageRoot">
     <header>
-      <img className="logo" src={logo} alt="Magenta Rejects Logo"/>
+      <a href="/"><img className="logo grow" src={logo} alt="Magenta Rejects Logo"/></a>
       <div className="titlegroup">
         <h1>MAGENTA REJECTS</h1>
         <p className="subhead">...is an art collective</p>
       </div>
     </header>
     <nav>
-      <a href="/rebecca">rebecca</a>
-      <a href="/mars">mars</a>
-      <a href="/luxpacifica">lux pacifica</a>
-      <a href="/saribble">s.a. ribble</a>
-      <a href="/collabs">collabs</a>
-      <a href="/shop">shop</a>
+      <a className="textLink" href="/rebecca">rebecca</a>
+      <a className="textLink" href="/mars">mars</a>
+      <a className="textLink" href="/luxpacifica">lux pacifica</a>
+      <a className="textLink" href="/saribble">s.a. ribble</a>
+      <a className="textLink" href="/collabs">collabs</a>
+      <a className="textLink" href="/shop">shop</a>
     </nav>
       <section className="shop">
         <h2>Shop</h2>
         <div className="container">
           <h3>See what's new from MR</h3>
-          <img className="storePreview" src="https://picsum.photos/500/400" alt="placeholder"/><br></br>
-          <a href="/shop">Shop All</a>
+          <img className="storePreview grow" src="https://picsum.photos/500/400" alt="placeholder"/><br></br>
+          <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
       </section>
       <section className="blog">
