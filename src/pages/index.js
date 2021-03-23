@@ -1,6 +1,5 @@
 import * as React from "react"
 import logo from '../images/logo.svg'
-import './global.css'
 import './index.css'
 
 // markup
