@@ -1,11 +1,15 @@
 import * as React from "react"
 import logo from '../images/logo.svg'
+import {Helmet} from 'react-helmet'
 import './index.css'
 
 // markup
 const IndexPage = () => {
   return (
     <div className="pageRoot">
+    <Helmet>
+      <title>Magenta Rejects</title>
+    </Helmet>
     <header>
       <a href="/"><img className="logo grow" src={logo} alt="Magenta Rejects Logo"/></a>
       <div className="titlegroup">

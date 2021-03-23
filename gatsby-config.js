@@ -10,6 +10,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         spaceId: process.env.CONTENTFUL_SPACEID,
       },
-    },
+    }, `gatsby-plugin-react-helmet`
   ],
 };
