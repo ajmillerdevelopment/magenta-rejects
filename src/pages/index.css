@@ -50,6 +50,7 @@ nav a {
 .shopLink {
     font-size: 26px;
     padding: 2px;
+    margin: 5px;
 }
 .shop {
     grid-area: 3/1/4/2;
