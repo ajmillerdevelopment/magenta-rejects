@@ -29,7 +29,7 @@ const IndexPage = () => {
         <h2>Shop</h2>
         <div className="container">
           <h3>See what's new from MR</h3>
-          <img className="storePreview grow" src="https://picsum.photos/300/300" alt="placeholder"/><br></br>
+          <img className="storePreview grow" src="https://picsum.photos/180/180" alt="placeholder"/><br></br>
           <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
       </section>
@@ -37,7 +37,7 @@ const IndexPage = () => {
         <h2>Blog</h2>
         <div className="container">
           <h3>This is a blog post</h3>
-          <h4>By: Poppy</h4>
+          <p className="subtitle">By: Poppy</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst proin orci quis interdum ultricies nibh. Mi euismod eu in nunc dui mauris placerat. Quam pretium nisi, et integer in pretium, sit felis elit. Dui in quam viverra libero ultrices nibh sed elementum leo. Hendrerit arcu aenean sed lacus, gravida ipsum. Sit turpis gravida laoreet sed nunc pellentesque. Fringilla pellentesque proin at sed lectus massa. Semper ut phasellus mattis posuere ullamcorper ultrices lorem. Ullamcorper commodo nulla pulvinar fames in id ut vestibulum, rhoncus. Quis suscipit convallis tortor venenatis donec metus elementum.</p>
         </div>
       </section>
