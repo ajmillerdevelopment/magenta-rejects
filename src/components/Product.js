@@ -1,5 +1,5 @@
 import React from 'react'
-import * as productStyles from './product.module.css'
+import * as productStyles from './Product.module.css'
 
 export default function Product(props) {
     const path = `/${props.id}`
