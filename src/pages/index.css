@@ -14,8 +14,8 @@ header {
     align-items: center;
 }
 .logo {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
 }
 h1 {
     font-size: 60px;
@@ -70,16 +70,23 @@ h3 {
     font-size: 26px;
 }
 .container {
-    height: 70%;
+    height: 80%;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .storePreview {
-    max-height: 80%;
-    max-width: 80%;
+    height: 80%;
+    width: 80%;
     border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.storePreview img  {
+    max-width: 100%;
+    max-height: 100%;
 }
 .blog {
     grid-area: 3/2/4/3;

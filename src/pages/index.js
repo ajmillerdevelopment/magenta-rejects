@@ -30,7 +30,7 @@ const IndexPage = () => {
         <div className="container">
           <h3>See what's new from MR</h3>
           <div className="storePreview">
-            <img className="storePreview grow" src="https://picsum.photos/480/480" alt="placeholder"/>
+            <img className="grow" src="https://picsum.photos/480/480" alt="placeholder"/>
           </div>
           <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
