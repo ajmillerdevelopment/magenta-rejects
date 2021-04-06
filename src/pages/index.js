@@ -29,7 +29,9 @@ const IndexPage = () => {
         <h2>Shop</h2>
         <div className="container">
           <h3>See what's new from MR</h3>
-          <img className="storePreview grow" src="https://picsum.photos/180/180" alt="placeholder"/><br></br>
+          <div className="storePreview">
+            <img className="storePreview grow" src="https://picsum.photos/480/480" alt="placeholder"/>
+          </div>
           <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
       </section>
