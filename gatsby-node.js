@@ -17,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allContentfulAuthor.edges.forEach(({node}) => {
         createPage({
             path: `/${node.path}`,
-            component: path.resolve('./src/templates/blog.js'),
+            component: path.resolve('./src/templates/artist.js'),
             context: {
                 id: node.id,
                 displayName: node.displayName

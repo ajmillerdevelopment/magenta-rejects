@@ -3,16 +3,17 @@ import logo from '../images/logo.svg'
 import {Helmet} from 'react-helmet'
 import Product from '../components/Product'
 import PostPreview from '../components/PostPreview'
-import './blog.css'
+import './artist.css'
 
 export default function blog({pageContext}) {
-    const dummies = [1,2,3]
+    const dummies = [1,2,3,4,5,6]
     const products = dummies.map((i) => {
         return <Product key={i} image="https://picsum.photos/180/120" alt="#" title="Product" author="Artist" price="$10.00"/>
     })
     const posts = dummies.map((i) => {
         return <PostPreview key={i} image="https://picsum.photos/130/130" alt="#" title="This is a blog post" preview="This is a preview of the post's content. Lorem ipsum lorem lorem ipsum"/>
     })
+
     return(
         <div className="pageRoot">
         <Helmet>
@@ -30,7 +31,7 @@ export default function blog({pageContext}) {
             <section className="products">
             {products}
             </section>
-            <button>See More</button>
+            <button><a href="/shop?rebecca">See More</a></button>
         </main>
         <section className="posts">
                 {posts}
