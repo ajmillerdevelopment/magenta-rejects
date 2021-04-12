@@ -4,13 +4,13 @@ import {Helmet} from 'react-helmet'
 import './index.css'
 import {Carousel} from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { graphql } from "gatsby"
 
 // markup
-const IndexPage = () => {
-  const dummies = [1,2,3,4,5,6]
-  const images = dummies.map((i) => {
-    return <div key={i}><img className="slide-image" src="https://picsum.photos/400/400" /><p className="legend">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio vero veniam beatae cum facere reprehenderit commodi nobis totam dicta?</p></div>
-  })
+const IndexPage = ({data}) => {
+  const urls = []
+  data.allContentfulProduct.nodes.forEach((i) => urls.push(i.gallery[0].file.url))
+  const images = urls.map((i) => {return <img src={i} />})
   return (
     <div className="pageRoot">
     <Helmet>
@@ -57,3 +57,16 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+export const query = graphql`
+query MyQuery {
+  allContentfulProduct {
+    nodes {
+      gallery {
+        file {
+          url
+        }
+      }
+    }
+  }
+}
+`
