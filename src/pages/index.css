@@ -120,3 +120,12 @@ p {
 .blog .container {
     justify-content: start;
 }
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 500px;
+    max-width: 600px;
+    width: auto;
+    height: auto;
+}

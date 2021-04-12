@@ -8,9 +8,13 @@ import { graphql } from "gatsby"
 
 // markup
 const IndexPage = ({data}) => {
-  const urls = []
-  data.allContentfulProduct.nodes.forEach((i) => urls.push(i.gallery[0].file.url))
-  const images = urls.map((i) => {return <img src={i} />})
+  const slides = data.allContentfulProduct.nodes.map((i) => {
+    return (<div>
+    <img className="slide-image" src={i.gallery[0].file.url} alt={i.gallery[0].description} />
+    <p className="legend">{i.title} by {i.author.displayName}, ${i.price}</p>
+    </div>)
+    
+  })
   return (
     <div className="pageRoot">
     <Helmet>
@@ -36,8 +40,8 @@ const IndexPage = ({data}) => {
         <div className="container">
           <h3>See what's new from MR</h3>
           <div className="storePreview">
-          <Carousel dynamicHeight={true} infiniteLoop={true} autoPlay={true} interval={10000} showThumbs={false} showStatus={false} showIndicators={false}>
-            {images}
+          <Carousel infiniteLoop={true} autoPlay={true} interval={10000} showThumbs={false} showStatus={false} showIndicators={false}>
+            {slides}
         </Carousel>
           </div>
           <a className="textLink shopLink" href="/shop">Shop All</a>
@@ -61,10 +65,16 @@ export const query = graphql`
 query MyQuery {
   allContentfulProduct {
     nodes {
+      price
+      title
       gallery {
         file {
           url
         }
+        description
+      }
+      author {
+        displayName
       }
     }
   }
