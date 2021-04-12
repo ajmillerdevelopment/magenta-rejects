@@ -2,9 +2,15 @@ import * as React from "react"
 import logo from '../images/logo.svg'
 import {Helmet} from 'react-helmet'
 import './index.css'
+import {Carousel} from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 // markup
 const IndexPage = () => {
+  const dummies = [1,2,3,4,5,6]
+  const images = dummies.map((i) => {
+    return <div key={i}><img className="slide-image" src="https://picsum.photos/400/400" /><p className="legend">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio vero veniam beatae cum facere reprehenderit commodi nobis totam dicta?</p></div>
+  })
   return (
     <div className="pageRoot">
     <Helmet>
@@ -25,12 +31,14 @@ const IndexPage = () => {
       <a className="textLink" href="/collabs">collabs</a>
       <a className="textLink" href="/shop">shop</a>
     </nav>
-      <section className="shop">
+    <section className="shop">
         <h2>Shop</h2>
         <div className="container">
           <h3>See what's new from MR</h3>
           <div className="storePreview">
-            <img className="grow" src="https://picsum.photos/480/480" alt="placeholder"/>
+          <Carousel dynamicHeight={true} infiniteLoop={true} autoPlay={true} interval={10000} showThumbs={false} showStatus={false} showIndicators={false}>
+            {images}
+        </Carousel>
           </div>
           <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
@@ -43,6 +51,7 @@ const IndexPage = () => {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst proin orci quis interdum ultricies nibh. Mi euismod eu in nunc dui mauris placerat. Quam pretium nisi, et integer in pretium, sit felis elit. Dui in quam viverra libero ultrices nibh sed elementum leo. Hendrerit arcu aenean sed lacus, gravida ipsum. Sit turpis gravida laoreet sed nunc pellentesque. Fringilla pellentesque proin at sed lectus massa. Semper ut phasellus mattis posuere ullamcorper ultrices lorem. Ullamcorper commodo nulla pulvinar fames in id ut vestibulum, rhoncus. Quis suscipit convallis tortor venenatis donec metus elementum.</p>
         </div>
       </section>
+      
     </div>
   )
 }
