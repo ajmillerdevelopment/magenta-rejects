@@ -1,0 +1,44 @@
+:root {
+    --darkpink: #FF3399;
+    --purple: #990066;
+    --pink: #FF7BAC;
+}
+.container {
+    width: 200px;
+    height: 250px;
+    background-color: rgba(255,123,172,0.61);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.image {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    margin: 10px 0 0 0;
+}
+.title {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    color: var(--purple);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px;
+}
+.subtitle {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    color: var(--purple);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px;
+}
+.price {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px;
+}

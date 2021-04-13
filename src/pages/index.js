@@ -2,9 +2,24 @@ import * as React from "react"
 import logo from '../images/logo.svg'
 import {Helmet} from 'react-helmet'
 import './index.css'
+import {Carousel} from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { graphql } from "gatsby"
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+  const slides = data.allContentfulProduct.nodes.map((i) => {
+    return (<div>
+    <img className="slide-image" src={i.gallery[0].file.url} alt={i.gallery[0].description} />
+    <p className="legend">{i.title} by {i.author.displayName}, ${i.price}</p>
+    </div>)
+  })
+  const post = data.contentfulPost
+  const postBodyJSON = JSON.parse(post.body.raw)
+  console.log(postBodyJSON)
+  const postBody = documentToReactComponents(postBodyJSON)
+  console.log(postBody)
   return (
     <div className="pageRoot">
     <Helmet>
@@ -25,24 +40,63 @@ const IndexPage = () => {
       <a className="textLink" href="/collabs">collabs</a>
       <a className="textLink" href="/shop">shop</a>
     </nav>
-      <section className="shop">
+    <section className="shop">
         <h2>Shop</h2>
         <div className="container">
           <h3>See what's new from MR</h3>
-          <img className="storePreview grow" src="https://picsum.photos/300/300" alt="placeholder"/><br></br>
+          <div className="storePreview">
+          <Carousel infiniteLoop={true} autoPlay={true} interval={10000} showThumbs={false} showStatus={false} showIndicators={false}>
+            {slides}
+        </Carousel>
+          </div>
           <a className="textLink shopLink" href="/shop">Shop All</a>
         </div>
       </section>
       <section className="blog">
         <h2>Blog</h2>
         <div className="container">
-          <h3>This is a blog post</h3>
-          <h4>By: Poppy</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst proin orci quis interdum ultricies nibh. Mi euismod eu in nunc dui mauris placerat. Quam pretium nisi, et integer in pretium, sit felis elit. Dui in quam viverra libero ultrices nibh sed elementum leo. Hendrerit arcu aenean sed lacus, gravida ipsum. Sit turpis gravida laoreet sed nunc pellentesque. Fringilla pellentesque proin at sed lectus massa. Semper ut phasellus mattis posuere ullamcorper ultrices lorem. Ullamcorper commodo nulla pulvinar fames in id ut vestibulum, rhoncus. Quis suscipit convallis tortor venenatis donec metus elementum.</p>
+          <h3>{post.title}</h3>
+          <p className="subtitle">By: {post.author.displayName}</p>
+          {postBody}
         </div>
       </section>
+      
     </div>
   )
 }
 
 export default IndexPage
+export const query = graphql`
+query MyQuery {
+  allContentfulProduct {
+    nodes {
+      price
+      title
+      gallery {
+        file {
+          url
+        }
+        description
+      }
+      author {
+        displayName
+      }
+    }
+  }
+  contentfulPost {
+    body {
+      raw
+      references {
+        description
+        file {
+          url
+        }
+      }
+    }
+    author {
+      displayName
+    }
+    title
+  }
+}
+`
