@@ -119,6 +119,8 @@ p {
 }
 .blog .container {
     justify-content: start;
+    max-height: 700px;
+    overflow: auto;
 }
 .slide {
     display: flex;

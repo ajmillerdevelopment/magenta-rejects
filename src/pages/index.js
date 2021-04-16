@@ -37,6 +37,7 @@ const IndexPage = ({data}) => {
       <a className="textLink" href="/mars">mars</a>
       <a className="textLink" href="/luxpacifica">lux pacifica</a>
       <a className="textLink" href="/saribble">s.a. ribble</a>
+      <a href="/ansel" className="textLink">ansel (test)</a>
       <a className="textLink" href="/collabs">collabs</a>
       <a className="textLink" href="/shop">shop</a>
     </nav>
