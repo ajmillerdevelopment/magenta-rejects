@@ -2,25 +2,39 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
     const {createPage} = actions
     const result = await graphql(`
-        query getAuthors {
-            allContentfulAuthor {
-                edges {
-                  node {
-                    id
-                    path
-                    displayName
-                  }
-                }
+    query MyQuery {
+      allContentfulAuthor {
+        nodes {
+          displayName
+          product {
+            title
+            price
+            gallery {
+              description
+              file {
+                url
               }
+              title
             }
+            contentful_id
+          }
+          about {
+            about
+          }
+          path
+        }
+      }
+    }
     `)
-    result.data.allContentfulAuthor.edges.forEach(({node}) => {
+    result.data.allContentfulAuthor.nodes.forEach((node) => {
+      console.log(node)
         createPage({
             path: `/${node.path}`,
             component: path.resolve('./src/templates/artist.js'),
             context: {
-                id: node.id,
-                displayName: node.displayName
+                displayName: node.displayName,
+                about: node.about.about,
+                products: node.product
             }
         })
     })
