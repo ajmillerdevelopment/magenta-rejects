@@ -6,22 +6,18 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulAuthor {
         nodes {
           displayName
-          product {
-            title
-            price
-            gallery {
-              description
-              file {
-                url
-              }
-              title
-            }
-            contentful_id
-          }
           about {
             about
           }
           path
+          post {
+            title
+            body {
+              raw
+            }
+            contentful_id
+            createdAt
+          }
         }
       }
     }
@@ -34,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
             context: {
                 displayName: node.displayName,
                 about: node.about.about,
-                products: node.product
+                posts: node.post
             }
         })
     })

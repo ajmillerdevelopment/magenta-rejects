@@ -17,9 +17,7 @@ const IndexPage = ({data}) => {
   })
   const post = data.contentfulPost
   const postBodyJSON = JSON.parse(post.body.raw)
-  console.log(postBodyJSON)
   const postBody = documentToReactComponents(postBodyJSON)
-  console.log(postBody)
   return (
     <div className="pageRoot">
     <Helmet>
