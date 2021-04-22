@@ -31,7 +31,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     `)
     result.data.allContentfulAuthor.nodes.forEach((node) => {
-      console.log(node)
         createPage({
             path: `/${node.path}`,
             component: path.resolve('./src/templates/artist.js'),
