@@ -3,12 +3,37 @@ import logo from '../images/logo.svg'
 import {Helmet} from 'react-helmet'
 import './artist.css'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
-
+import {BLOCKS} from '@contentful/rich-text-types'
+import EmbedImage from '../components/EmbedImage'
 
 export default function Blog({pageContext}) {
+    const options = {
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+               const targetID = node.data.target.sys.id
+               let src = null
+               let alt = null 
+               console.log(`target ID: ${targetID}`)
+               pageContext.posts.forEach((post) => {
+                   post.body.references.forEach((ref) => {
+                       if (ref.contentful_id === targetID) {
+                        src = ref.file.url
+                        alt = ref.description
+                        console.log(`set src to ${src}`)
+                       }
+                   })
+               })
+               console.log(`src still is ${src}`)
+               if (src) {
+                   return (<EmbedImage src={src} alt={alt}/>)
+               }
+               else return null
+            }
+        }
+    }
     const posts = pageContext.posts.map((post) => {
         const json = JSON.parse(post.body.raw)
-        const comps = documentToReactComponents(json)
+        const comps = documentToReactComponents(json, options)
         post.body.text = comps
         return post
     })
@@ -35,7 +60,7 @@ export default function Blog({pageContext}) {
             <h2>Shop</h2>
         </aside>
         <main>
-            <article className="container">
+            <article id="hero" className="container">
                 {hero.body.text}
             </article>
         </main>

@@ -14,6 +14,14 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             body {
               raw
+              references {
+                file {
+                  url
+                }
+                description
+                title
+                contentful_id
+              }
             }
             contentful_id
             createdAt
