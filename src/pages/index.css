@@ -79,6 +79,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin: 0 0 20px 0;
 }
 .storePreview {
     height: 80%;
@@ -119,6 +120,8 @@ p {
 }
 .blog .container {
     justify-content: start;
+    max-height: 700px;
+    overflow: auto;
 }
 .slide {
     display: flex;
